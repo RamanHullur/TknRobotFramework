@@ -3,13 +3,8 @@ Documentation    Suite description
 Library          RequestsLibrary
 Library          BuiltIn
 Library          Collections
+Resource        ../TestData/APIPath.robot
 
-*** Keywords ***
-#${base_url}=      https://reqres.in/api/users
-
-*** Variables ***
-${base_url}=        https://reqres.in
-${end_point}=       /api/users
 
 *** Test Cases ***
 Test_CreatingNewUser

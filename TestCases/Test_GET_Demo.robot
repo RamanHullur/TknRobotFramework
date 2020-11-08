@@ -1,27 +1,22 @@
 *** Settings ***
-Library     RequestsLibrary
-Library     BuiltIn
-Library     Collections
-Library     xml
+Documentation    Suite description
+Library          RequestsLibrary
+Library          BuiltIn
+Library          Collections
+Resource        ../TestData/APIPath.robot
 
-*** Variables ***
-${base_url}     http://restapi.demoqa.com
-${city}         Delhi
 
-${base_url2}    https://reqres.in
-${users}        /api/users?page=2
 
 *** Test Cases ***
 Test_GeUsersDetailsReport
     [Tags]    Fetching users details
 
-    #create session      mysession       ${base_url}
-    create session      mysession       ${base_url2}
+    create session      mysession       ${base_url}
     ${response}=        get request         mysession       ${users}
 
-    #log to console     ${response.status_code}
-    #log to console     ${response.content}
-    #log to console     ${response.headers}
+    log to console     ${response.status_code}
+    log to console     ${response.content}
+    log to console     ${response.headers}
 
     #VALIDATIONS
 
