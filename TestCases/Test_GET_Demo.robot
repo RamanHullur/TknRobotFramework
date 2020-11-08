@@ -11,8 +11,8 @@ Resource        ../TestData/APIPath.robot
 Test_GeUsersDetailsReport
     [Tags]    Fetching users details
 
-    create session      mysession       ${base_url}
-    ${response}=        get request         mysession       ${users}
+    create session      demosession       ${base_url}
+    ${response}=        get request         demosession       ${users}
 
     log to console     ${response.status_code}
     log to console     ${response.content}

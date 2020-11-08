@@ -10,11 +10,11 @@ Resource         ../TestData/APIPath.robot
 Test_CreatingNewUser
     [Tags]    Generate the new user
 
-    create session  mysession           ${base_url}
+    create session  demosession           ${base_url}
     ${body}=        create dictionary   name=Raman   job=Senior Test Engineer
     ${header}=      create dictionary   Content-Type=application/json
 
-    ${response}=    post request    mysession           ${end_point}     data=${body}   headers=${header}
+    ${response}=    post request    demosession           ${end_point}     data=${body}   headers=${header}
 
     log to console  ${response.status_code}
     log to console  ${response.content}
