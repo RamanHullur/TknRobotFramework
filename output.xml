@@ -1,178 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20201108 13:53:38.596" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
-<suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_GET_Demo.robot" id="s1" name="Test GET Demo">
-<test id="s1-t1" name="Test_GeUsersDetailsReport">
+<robot rpa="false" generated="20201108 18:12:44.241" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
+<suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_XML_Response.robot" id="s1" name="Test XML Response">
+<test id="s1-t1" name="Demo test case to fetch XML response">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
-<arg>mysession</arg>
-<arg>${base_url}</arg>
+<arg>demosession</arg>
+<arg>${base_url_xml}</arg>
 </arguments>
-<msg timestamp="20201108 13:53:38.704" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20201108 13:53:38.704" starttime="20201108 13:53:38.703"></status>
+<msg timestamp="20201108 18:12:44.360" level="INFO">Creating Session using : alias=demosession, url=http://thomas-bayer.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20201108 18:12:44.360" starttime="20201108 18:12:44.360"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
 <arguments>
-<arg>mysession</arg>
-<arg>${users}</arg>
+<arg>demosession</arg>
+<arg>${end_point_xml}</arg>
 </arguments>
 <assign>
-<var>${response}</var>
+<var>${xml_response}</var>
 </assign>
-<msg timestamp="20201108 13:53:39.256" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
- path_url=/api/users?page=2 
+<msg timestamp="20201108 18:12:45.523" level="INFO">GET Request : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
+ path_url=/sqlrest/CUSTOMER/15 
  headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.24.0'} 
  body=None 
  </msg>
-<msg timestamp="20201108 13:53:39.256" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+<msg timestamp="20201108 18:12:45.523" level="INFO">GET Response : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
  status=200, reason=OK 
- body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg"}],"ad":{"company":"StatusCode Weekly","url":"http://statuscode.org/","text":"A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."}} 
+ body=&lt;?xml version="1.0" standalone="no"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+    &lt;ID&gt;15&lt;/ID&gt;
+    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
+    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
+    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
+    &lt;CITY&gt;Seattle&lt;/CITY&gt;
+&lt;/CUSTOMER&gt; 
  </msg>
-<msg timestamp="20201108 13:53:39.256" level="INFO">/Users/udecgi/PycharmProjects/Practice-Python/venv/lib/python2.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20201108 13:53:39.257" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20201108 13:53:39.257" starttime="20201108 13:53:38.704"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${response.status_code}</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.258" starttime="20201108 13:53:39.257"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${response.content}</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.260" starttime="20201108 13:53:39.259"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${response.headers}</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.262" starttime="20201108 13:53:39.260"></status>
+<msg timestamp="20201108 18:12:45.524" level="INFO">${xml_response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20201108 18:12:45.524" starttime="20201108 18:12:44.361"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
 <arguments>
-<arg>${response.status_code}</arg>
+<arg>${xml_response}</arg>
 </arguments>
 <assign>
-<var>${status_code}</var>
+<var>${xml_response_output}</var>
 </assign>
-<msg timestamp="20201108 13:53:39.263" level="INFO">${status_code} = 200</msg>
-<status status="PASS" endtime="20201108 13:53:39.263" starttime="20201108 13:53:39.262"></status>
+<msg timestamp="20201108 18:12:45.525" level="INFO">${xml_response_output} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20201108 18:12:45.525" starttime="20201108 18:12:45.525"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<kw name="Parse Xml" library="XML">
+<doc>Parses the given XML file or string into an element structure.</doc>
 <arguments>
-<arg>${status_code}</arg>
-<arg>200</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.264" starttime="20201108 13:53:39.264"></status>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<doc>Converts the given item to a Unicode string.</doc>
-<arguments>
-<arg>${response.content}</arg>
+<arg>${xml_response_output}</arg>
 </arguments>
 <assign>
-<var>${body}</var>
+<var>${xml_obj}</var>
 </assign>
-<msg timestamp="20201108 13:53:39.265" level="INFO">${body} = {"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://s3.amazonaws.com/uifaces/faces/twitte...</msg>
-<status status="PASS" endtime="20201108 13:53:39.265" starttime="20201108 13:53:39.264"></status>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<doc>Converts the given item to a Unicode string.</doc>
-<arguments>
-<arg>${response.content}</arg>
-</arguments>
-<assign>
-<var>${body_2}</var>
-</assign>
-<msg timestamp="20201108 13:53:39.266" level="INFO">${body_2} = {"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://s3.amazonaws.com/uifaces/faces/twitte...</msg>
-<status status="PASS" endtime="20201108 13:53:39.266" starttime="20201108 13:53:39.265"></status>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<doc>Converts the given item to a Unicode string.</doc>
-<arguments>
-<arg>${response.headers}</arg>
-</arguments>
-<assign>
-<var>${headers}</var>
-</assign>
-<msg timestamp="20201108 13:53:39.267" level="INFO">${headers} = {'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Via': '1.1 vegur', 'CF-RAY': '5eede4a5d9d1d7...</msg>
-<status status="PASS" endtime="20201108 13:53:39.267" starttime="20201108 13:53:39.266"></status>
-</kw>
-<kw name="Get From Dictionary" library="Collections">
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<arguments>
-<arg>${response.headers}</arg>
-<arg>Content-Type</arg>
-</arguments>
-<assign>
-<var>${header_content}</var>
-</assign>
-<msg timestamp="20201108 13:53:39.267" level="INFO">${header_content} = application/json; charset=utf-8</msg>
-<status status="PASS" endtime="20201108 13:53:39.268" starttime="20201108 13:53:39.267"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${body}</arg>
-<arg>michael.lawson@reqres.in</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.268" starttime="20201108 13:53:39.268"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${body_2}</arg>
-<arg>Michael</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.269" starttime="20201108 13:53:39.268"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${headers}</arg>
-<arg>application/json</arg>
-</arguments>
-<status status="PASS" endtime="20201108 13:53:39.269" starttime="20201108 13:53:39.269"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>${header_content}</arg>
-<arg>application/json; charset=utf-8</arg>
-</arguments>
-<msg timestamp="20201108 13:53:39.270" level="INFO">Argument types are:
-&lt;type 'str'&gt;
-&lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20201108 13:53:39.270" starttime="20201108 13:53:39.269"></status>
+<msg timestamp="20201108 18:12:45.528" level="FAIL">ParseError: not well-formed (invalid token): line 1, column 10</msg>
+<status status="FAIL" endtime="20201108 18:12:45.528" starttime="20201108 18:12:45.526"></status>
 </kw>
 <tags>
-<tag>Fetching users details</tag>
+<tag>XML response varification</tag>
 </tags>
-<status status="PASS" endtime="20201108 13:53:39.270" critical="yes" starttime="20201108 13:53:38.703"></status>
+<status status="FAIL" endtime="20201108 18:12:45.528" critical="yes" starttime="20201108 18:12:44.359">ParseError: not well-formed (invalid token): line 1, column 10</status>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" endtime="20201108 13:53:39.271" starttime="20201108 13:53:38.599"></status>
+<status status="FAIL" endtime="20201108 18:12:45.529" starttime="20201108 18:12:44.244"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Fetching users details</stat>
+<stat fail="1" pass="0">XML response varification</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Test GET Demo" pass="1">Test GET Demo</stat>
+<stat fail="1" id="s1" name="Test XML Response" pass="0">Test XML Response</stat>
 </suite>
 </statistics>
 <errors>

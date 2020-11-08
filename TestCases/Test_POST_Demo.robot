@@ -3,7 +3,7 @@ Documentation    Suite description
 Library          RequestsLibrary
 Library          BuiltIn
 Library          Collections
-Resource        ../TestData/APIPath.robot
+Resource         ../TestData/APIPath.robot
 
 
 *** Test Cases ***
