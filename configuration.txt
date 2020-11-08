@@ -1,0 +1,49 @@
+Reference Doc:
+====================
+
+Setup Environment Variable Path for Python Installation
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+
+OR
+
+Once you have confirmed that Python is installed correctly, we can proceed with installing Pip.
+1. Download get-pip.py to a folder on your computer.
+2. Open a command prompt and navigate to the folder containing the get-pip.py installer.
+3. Run the following command:
+
+python get-pip.py
+
+Required Libraries for Rest API automation:
+pip install robotframework
+pip install --upgrade robotframework
+pip install requests
+pip install robotframework-requests
+pip install -U robotframework-jsonlibrary
+pip install jsonpath-rw
+pip install jsonpath-rw-ext
+pip install robotframework-jsonlibrary
+
+pip show  robotframework
+
+Required Plug-Ins for PyCharm/IntelliJ
+Intellibot
+Robot Framework Support
+
+Run Tests from Terminal:
+Go Project Directory in Terminal
+robot TestCases/Test_GET_Demo.robot
+robot -d Report TestCases/Test_GET_Demo.robot
+robot -d Report TestCases
+
+To run perticular Test Case group:
+robot - i tagname TestCases/Test_GET_Demo.robot
+robot - i tagname TestCases
+
+To Run only failed Test Cases:
+robot  —rerunfailed output.xml tests
+
+Required Documentation:
+https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html
+https://robotframework.org/robotframework/latest/libraries/BuiltIn.html

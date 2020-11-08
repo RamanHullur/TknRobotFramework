@@ -13,6 +13,8 @@ ${users}        /api/users?page=2
 
 *** Test Cases ***
 Test_GeUsersDetailsReport
+    [Tags]    Fetching users details
+
     #create session      mysession       ${base_url}
     create session      mysession       ${base_url2}
     ${response}=        get request         mysession       ${users}
