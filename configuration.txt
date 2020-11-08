@@ -37,7 +37,7 @@ robot TestCases/Test_GET_Demo.robot
 robot -d Report TestCases/Test_GET_Demo.robot
 robot -d Report TestCases
 
-To run perticular Test Case group:
+To run Grouping Test Case:
 robot - i tagname TestCases/Test_GET_Demo.robot
 robot - i tagname TestCases
 
@@ -47,3 +47,6 @@ robot  —rerunfailed output.xml tests
 Required Documentation:
 https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html
 https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+https://robotframework.org/robotframework/latest/libraries/XML.html
+
+cmd+option+L - Code format/indentation

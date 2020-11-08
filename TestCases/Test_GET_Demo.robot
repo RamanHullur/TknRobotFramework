@@ -2,7 +2,7 @@
 Library     RequestsLibrary
 Library     BuiltIn
 Library     Collections
-
+Library     xml
 
 *** Variables ***
 ${base_url}     http://restapi.demoqa.com
@@ -37,6 +37,7 @@ Test_GeUsersDetailsReport
     should contain     ${body_2}               Michael
     should contain     ${headers}              application/json
     should be equal    ${header_content}       application/json; charset=utf-8
+
 
 
 

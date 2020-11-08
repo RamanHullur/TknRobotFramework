@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20201107 19:35:32.597" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
+<robot rpa="false" generated="20201108 11:43:56.917" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
 <suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_POST_Demo.robot" id="s1" name="Test POST Demo">
 <test id="s1-t1" name="Test_CreatingNewUser">
 <kw name="Create Session" library="RequestsLibrary">
@@ -8,8 +8,8 @@
 <arg>mysession</arg>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20201107 19:35:32.941" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20201107 19:35:32.941" starttime="20201107 19:35:32.940"></status>
+<msg timestamp="20201108 11:43:57.222" level="INFO">Creating Session using : alias=mysession, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20201108 11:43:57.223" starttime="20201108 11:43:57.222"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -20,8 +20,8 @@
 <assign>
 <var>${body}</var>
 </assign>
-<msg timestamp="20201107 19:35:32.942" level="INFO">${body} = {u'name': u'Raman', u'job': u'Senior Test Engineer'}</msg>
-<status status="PASS" endtime="20201107 19:35:32.942" starttime="20201107 19:35:32.941"></status>
+<msg timestamp="20201108 11:43:57.224" level="INFO">${body} = {u'name': u'Raman', u'job': u'Senior Test Engineer'}</msg>
+<status status="PASS" endtime="20201108 11:43:57.224" starttime="20201108 11:43:57.223"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -31,8 +31,8 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20201107 19:35:32.944" level="INFO">${header} = {u'Content-Type': u'application/json'}</msg>
-<status status="PASS" endtime="20201107 19:35:32.944" starttime="20201107 19:35:32.943"></status>
+<msg timestamp="20201108 11:43:57.225" level="INFO">${header} = {u'Content-Type': u'application/json'}</msg>
+<status status="PASS" endtime="20201108 11:43:57.225" starttime="20201108 11:43:57.224"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the
@@ -46,33 +46,33 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20201107 19:35:33.728" level="INFO">POST Request : url=https://reqres.in/api/users 
+<msg timestamp="20201108 11:43:57.992" level="INFO">POST Request : url=https://reqres.in/api/users 
  path_url=/api/users 
  headers={'Content-Length': '48', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.24.0', 'Connection': 'keep-alive', 'Content-Type': u'application/json'} 
  body={"name": "Raman", "job": "Senior Test Engineer"} 
  </msg>
-<msg timestamp="20201107 19:35:33.729" level="INFO">POST Response : url=https://reqres.in/api/users 
+<msg timestamp="20201108 11:43:57.992" level="INFO">POST Response : url=https://reqres.in/api/users 
  status=201, reason=Created 
- body={"name":"Raman","job":"Senior Test Engineer","id":"244","createdAt":"2020-11-07T14:05:33.636Z"} 
+ body={"name":"Raman","job":"Senior Test Engineer","id":"794","createdAt":"2020-11-08T06:13:57.893Z"} 
  </msg>
-<msg timestamp="20201107 19:35:33.729" level="INFO">/Users/udecgi/PycharmProjects/Practice-Python/venv/lib/python2.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20201108 11:43:57.992" level="INFO">/Users/udecgi/PycharmProjects/Practice-Python/venv/lib/python2.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning,</msg>
-<msg timestamp="20201107 19:35:33.729" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" endtime="20201107 19:35:33.730" starttime="20201107 19:35:32.944"></status>
+<msg timestamp="20201108 11:43:57.993" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" endtime="20201108 11:43:57.993" starttime="20201108 11:43:57.225"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<status status="PASS" endtime="20201107 19:35:33.732" starttime="20201107 19:35:33.730"></status>
+<status status="PASS" endtime="20201108 11:43:57.994" starttime="20201108 11:43:57.993"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<status status="PASS" endtime="20201107 19:35:33.733" starttime="20201107 19:35:33.732"></status>
+<status status="PASS" endtime="20201108 11:43:57.996" starttime="20201108 11:43:57.995"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -82,8 +82,8 @@ given `alias`</doc>
 <assign>
 <var>${response_body}</var>
 </assign>
-<msg timestamp="20201107 19:35:33.735" level="INFO">${response_body} = {"name":"Raman","job":"Senior Test Engineer","id":"244","createdAt":"2020-11-07T14:05:33.636Z"}</msg>
-<status status="PASS" endtime="20201107 19:35:33.735" starttime="20201107 19:35:33.733"></status>
+<msg timestamp="20201108 11:43:57.997" level="INFO">${response_body} = {"name":"Raman","job":"Senior Test Engineer","id":"794","createdAt":"2020-11-08T06:13:57.893Z"}</msg>
+<status status="PASS" endtime="20201108 11:43:57.997" starttime="20201108 11:43:57.996"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -91,7 +91,7 @@ given `alias`</doc>
 <arg>${response_body}</arg>
 <arg>Raman</arg>
 </arguments>
-<status status="PASS" endtime="20201107 19:35:33.736" starttime="20201107 19:35:33.735"></status>
+<status status="PASS" endtime="20201108 11:43:57.998" starttime="20201108 11:43:57.997"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -99,15 +99,34 @@ given `alias`</doc>
 <arg>${response_body}</arg>
 <arg>Senior Test Engineer</arg>
 </arguments>
-<status status="PASS" endtime="20201107 19:35:33.738" starttime="20201107 19:35:33.736"></status>
+<status status="PASS" endtime="20201108 11:43:57.999" starttime="20201108 11:43:57.998"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code}</var>
+</assign>
+<msg timestamp="20201108 11:43:58.000" level="INFO">${status_code} = 201</msg>
+<status status="PASS" endtime="20201108 11:43:58.000" starttime="20201108 11:43:57.999"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code}</arg>
+<arg>201</arg>
+</arguments>
+<status status="PASS" endtime="20201108 11:43:58.001" starttime="20201108 11:43:58.000"></status>
 </kw>
 <tags>
 <tag>Generate the new user</tag>
 </tags>
-<status status="PASS" endtime="20201107 19:35:33.738" critical="yes" starttime="20201107 19:35:32.939"></status>
+<status status="PASS" endtime="20201108 11:43:58.001" critical="yes" starttime="20201108 11:43:57.221"></status>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" endtime="20201107 19:35:33.740" starttime="20201107 19:35:32.600"></status>
+<status status="PASS" endtime="20201108 11:43:58.002" starttime="20201108 11:43:56.919"></status>
 </suite>
 <statistics>
 <total>

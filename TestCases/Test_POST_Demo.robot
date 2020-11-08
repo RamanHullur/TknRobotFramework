@@ -29,6 +29,9 @@ Test_CreatingNewUser
     should contain          ${response_body}        Raman
     should contain          ${response_body}        Senior Test Engineer
 
+    ${status_code}=    convert to String    ${response.status_code}
+    should be equal    ${status_code}       201
+
 
 
 
