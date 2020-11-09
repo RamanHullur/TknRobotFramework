@@ -6,7 +6,6 @@ Library          Collections
 Resource        ../TestData/APIPath.robot
 
 
-
 *** Test Cases ***
 Test_GeUsersDetailsReport
     [Tags]    Fetching users details

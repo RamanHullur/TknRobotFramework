@@ -1,84 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20201108 18:12:44.241" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
-<suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_XML_Response.robot" id="s1" name="Test XML Response">
-<test id="s1-t1" name="Demo test case to fetch XML response">
+<robot rpa="false" generated="20201109 10:32:26.754" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
+<suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_PUT_Demo.robot" id="s1" name="Test PUT Demo">
+<test id="s1-t1" name="Modifying the Student Details">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
-<arg>demosession</arg>
-<arg>${base_url_xml}</arg>
+<arg>addstudentdata</arg>
+<arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20201108 18:12:44.360" level="INFO">Creating Session using : alias=demosession, url=http://thomas-bayer.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20201108 18:12:44.360" starttime="20201108 18:12:44.360"></status>
+<msg timestamp="20201109 10:32:26.864" level="INFO">Creating Session using : alias=addstudentdata, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20201109 10:32:26.864" starttime="20201109 10:32:26.863"></status>
 </kw>
-<kw name="Get Request" library="RequestsLibrary">
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
 <arguments>
-<arg>demosession</arg>
-<arg>${end_point_xml}</arg>
+<arg>name=Hullur2</arg>
+<arg>job=Software Engineer2</arg>
 </arguments>
 <assign>
-<var>${xml_response}</var>
+<var>${body}</var>
 </assign>
-<msg timestamp="20201108 18:12:45.523" level="INFO">GET Request : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
- path_url=/sqlrest/CUSTOMER/15 
- headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.24.0'} 
- body=None 
+<msg timestamp="20201109 10:32:26.865" level="INFO">${body} = {u'name': u'Hullur2', u'job': u'Software Engineer2'}</msg>
+<status status="PASS" endtime="20201109 10:32:26.865" starttime="20201109 10:32:26.865"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json, text/json</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20201109 10:32:26.866" level="INFO">${header} = {u'Content-Type': u'application/json, text/json'}</msg>
+<status status="PASS" endtime="20201109 10:32:26.866" starttime="20201109 10:32:26.865"></status>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<doc>Send a PUT request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>addstudentdata</arg>
+<arg>${update_user}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20201109 10:32:27.526" level="INFO">PUT Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'Content-Length': '48', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.24.0', 'Connection': 'keep-alive', 'Content-Type': u'application/json, text/json'} 
+ body={"name": "Hullur2", "job": "Software Engineer2"} 
  </msg>
-<msg timestamp="20201108 18:12:45.523" level="INFO">GET Response : url=http://thomas-bayer.com/sqlrest/CUSTOMER/15 
+<msg timestamp="20201109 10:32:27.526" level="INFO">PUT Response : url=https://reqres.in/api/users/2 
  status=200, reason=OK 
- body=&lt;?xml version="1.0" standalone="no"?&gt;&lt;CUSTOMER xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
-    &lt;ID&gt;15&lt;/ID&gt;
-    &lt;FIRSTNAME&gt;Bill&lt;/FIRSTNAME&gt;
-    &lt;LASTNAME&gt;Clancy&lt;/LASTNAME&gt;
-    &lt;STREET&gt;319 Upland Pl.&lt;/STREET&gt;
-    &lt;CITY&gt;Seattle&lt;/CITY&gt;
-&lt;/CUSTOMER&gt; 
+ body={"updatedAt":"2020-11-09T05:02:27.425Z"} 
  </msg>
-<msg timestamp="20201108 18:12:45.524" level="INFO">${xml_response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20201108 18:12:45.524" starttime="20201108 18:12:44.361"></status>
+<msg timestamp="20201109 10:32:27.526" level="INFO">/Users/udecgi/PycharmProjects/Practice-Python/venv/lib/python2.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20201109 10:32:27.526" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20201109 10:32:27.527" starttime="20201109 10:32:26.866"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
 <arguments>
-<arg>${xml_response}</arg>
+<arg>${response.status_code}</arg>
 </arguments>
 <assign>
-<var>${xml_response_output}</var>
+<var>${statuscode}</var>
 </assign>
-<msg timestamp="20201108 18:12:45.525" level="INFO">${xml_response_output} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20201108 18:12:45.525" starttime="20201108 18:12:45.525"></status>
+<msg timestamp="20201109 10:32:27.528" level="INFO">${statuscode} = 200</msg>
+<status status="PASS" endtime="20201109 10:32:27.528" starttime="20201109 10:32:27.527"></status>
 </kw>
-<kw name="Parse Xml" library="XML">
-<doc>Parses the given XML file or string into an element structure.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${xml_response_output}</arg>
+<arg>${statuscode}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" endtime="20201109 10:32:27.529" starttime="20201109 10:32:27.529"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.headers}</arg>
 </arguments>
 <assign>
-<var>${xml_obj}</var>
+<var>${response.header}</var>
 </assign>
-<msg timestamp="20201108 18:12:45.528" level="FAIL">ParseError: not well-formed (invalid token): line 1, column 10</msg>
-<status status="FAIL" endtime="20201108 18:12:45.528" starttime="20201108 18:12:45.526"></status>
+<msg timestamp="20201109 10:32:27.530" level="INFO">${response.header} = {'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Content-Length': '40', 'Via': '1.1 vegur', 'X-Powered-By': 'Express', 'Set-Cookie': '__cfduid=...</msg>
+<status status="PASS" endtime="20201109 10:32:27.531" starttime="20201109 10:32:27.530"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${response.header}</arg>
+<arg>keep-alive</arg>
+</arguments>
+<status status="PASS" endtime="20201109 10:32:27.531" starttime="20201109 10:32:27.531"></status>
 </kw>
 <tags>
-<tag>XML response varification</tag>
+<tag>Modify the Student details for ID=1</tag>
 </tags>
-<status status="FAIL" endtime="20201108 18:12:45.528" critical="yes" starttime="20201108 18:12:44.359">ParseError: not well-formed (invalid token): line 1, column 10</status>
+<status status="PASS" endtime="20201109 10:32:27.532" critical="yes" starttime="20201109 10:32:26.863"></status>
 </test>
 <doc>Suite description</doc>
-<status status="FAIL" endtime="20201108 18:12:45.529" starttime="20201108 18:12:44.244"></status>
+<status status="PASS" endtime="20201109 10:32:27.533" starttime="20201109 10:32:26.756"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">XML response varification</stat>
+<stat fail="0" pass="1">Modify the Student details for ID=1</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Test XML Response" pass="0">Test XML Response</stat>
+<stat fail="0" id="s1" name="Test PUT Demo" pass="1">Test PUT Demo</stat>
 </suite>
 </statistics>
 <errors>
