@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20201109 12:03:52.457" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
+<robot rpa="false" generated="20201109 12:23:05.890" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
 <suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_PUT_Demo.robot" id="s1" name="Test PUT Demo">
 <test id="s1-t1" name="Modifying the Student Details">
 <kw name="Creating a PUT session">
@@ -13,8 +13,8 @@
 <arg>addstudentdata</arg>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20201109 12:03:52.976" level="INFO">Creating Session using : alias=addstudentdata, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20201109 12:03:52.977" starttime="20201109 12:03:52.976"></status>
+<msg timestamp="20201109 12:23:07.199" level="INFO">Creating Session using : alias=addstudentdata, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20201109 12:23:07.200" starttime="20201109 12:23:07.198"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -25,8 +25,8 @@
 <assign>
 <var>${body}</var>
 </assign>
-<msg timestamp="20201109 12:03:52.978" level="INFO">${body} = {u'name': 'Ramanagowda', u'job': 'Sr Test Engineer'}</msg>
-<status status="PASS" endtime="20201109 12:03:52.978" starttime="20201109 12:03:52.977"></status>
+<msg timestamp="20201109 12:23:07.201" level="INFO">${body} = {u'name': 'Ramanagowda', u'job': 'Sr Test Engineer'}</msg>
+<status status="PASS" endtime="20201109 12:23:07.201" starttime="20201109 12:23:07.200"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -36,18 +36,18 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20201109 12:03:52.979" level="INFO">${header} = {u'Content-Type': u'application/json, text/json'}</msg>
-<status status="PASS" endtime="20201109 12:03:52.979" starttime="20201109 12:03:52.979"></status>
+<msg timestamp="20201109 12:23:07.202" level="INFO">${header} = {u'Content-Type': u'application/json, text/json'}</msg>
+<status status="PASS" endtime="20201109 12:23:07.202" starttime="20201109 12:23:07.201"></status>
 </kw>
-<status status="PASS" endtime="20201109 12:03:52.979" starttime="20201109 12:03:52.976"></status>
+<status status="PASS" endtime="20201109 12:23:07.202" starttime="20201109 12:23:07.197"></status>
 </kw>
 <tags>
 <tag>Modify the Student details for ID=1</tag>
 </tags>
-<status status="PASS" endtime="20201109 12:03:52.980" critical="yes" starttime="20201109 12:03:52.975"></status>
+<status status="PASS" endtime="20201109 12:23:07.203" critical="yes" starttime="20201109 12:23:07.196"></status>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" endtime="20201109 12:03:52.980" starttime="20201109 12:03:52.460"></status>
+<status status="PASS" endtime="20201109 12:23:07.203" starttime="20201109 12:23:05.895"></status>
 </suite>
 <statistics>
 <total>

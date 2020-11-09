@@ -4,8 +4,8 @@ Library          RequestsLibrary
 Library          BuiltIn
 Library          Collections
 Resource         ../TestData/APIPath.robot
-#Library          DataDriver     ../TestData/TestData.csv        sheet_name=TestCase1
-Library          DataDriver     ../TestData/TestData.xlsx        sheet_name=TestCase1
+Library          DataDriver     ../TestData/TestData.csv
+#Library          DataDriver     ../TestData/TestData.xlsx        sheet_name=TestCase1
 Test Template    creating a put session
 
 *** Test Cases ***
