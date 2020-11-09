@@ -24,6 +24,7 @@ pip install -U robotframework-jsonlibrary
 pip install jsonpath-rw
 pip install jsonpath-rw-ext
 pip install robotframework-jsonlibrary
+pip install robotfrmework-datadriver
 
 pip show  robotframework
 

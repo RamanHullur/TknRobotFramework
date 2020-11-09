@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20201109 10:32:26.754" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
+<robot rpa="false" generated="20201109 12:03:52.457" generator="Robot 3.2.2 (Python 2.7.16 on darwin)">
 <suite source="/Users/udecgi/PycharmProjects/RobotFwRestAPI/TestCases/Test_PUT_Demo.robot" id="s1" name="Test PUT Demo">
 <test id="s1-t1" name="Modifying the Student Details">
+<kw name="Creating a PUT session">
+<arguments>
+<arg>Ramanagowda</arg>
+<arg>Sr Test Engineer</arg>
+</arguments>
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>addstudentdata</arg>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20201109 10:32:26.864" level="INFO">Creating Session using : alias=addstudentdata, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20201109 10:32:26.864" starttime="20201109 10:32:26.863"></status>
+<msg timestamp="20201109 12:03:52.976" level="INFO">Creating Session using : alias=addstudentdata, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20201109 12:03:52.977" starttime="20201109 12:03:52.976"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
 <arguments>
-<arg>name=Hullur2</arg>
-<arg>job=Software Engineer2</arg>
+<arg>name=${name}</arg>
+<arg>job=${job}</arg>
 </arguments>
 <assign>
 <var>${body}</var>
 </assign>
-<msg timestamp="20201109 10:32:26.865" level="INFO">${body} = {u'name': u'Hullur2', u'job': u'Software Engineer2'}</msg>
-<status status="PASS" endtime="20201109 10:32:26.865" starttime="20201109 10:32:26.865"></status>
+<msg timestamp="20201109 12:03:52.978" level="INFO">${body} = {u'name': 'Ramanagowda', u'job': 'Sr Test Engineer'}</msg>
+<status status="PASS" endtime="20201109 12:03:52.978" starttime="20201109 12:03:52.977"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -31,80 +36,18 @@
 <assign>
 <var>${header}</var>
 </assign>
-<msg timestamp="20201109 10:32:26.866" level="INFO">${header} = {u'Content-Type': u'application/json, text/json'}</msg>
-<status status="PASS" endtime="20201109 10:32:26.866" starttime="20201109 10:32:26.865"></status>
+<msg timestamp="20201109 12:03:52.979" level="INFO">${header} = {u'Content-Type': u'application/json, text/json'}</msg>
+<status status="PASS" endtime="20201109 12:03:52.979" starttime="20201109 12:03:52.979"></status>
 </kw>
-<kw name="Put Request" library="RequestsLibrary">
-<doc>Send a PUT request on the session object found using the
-given `alias`</doc>
-<arguments>
-<arg>addstudentdata</arg>
-<arg>${update_user}</arg>
-<arg>data=${body}</arg>
-<arg>headers=${header}</arg>
-</arguments>
-<assign>
-<var>${response}</var>
-</assign>
-<msg timestamp="20201109 10:32:27.526" level="INFO">PUT Request : url=https://reqres.in/api/users/2 
- path_url=/api/users/2 
- headers={'Content-Length': '48', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'python-requests/2.24.0', 'Connection': 'keep-alive', 'Content-Type': u'application/json, text/json'} 
- body={"name": "Hullur2", "job": "Software Engineer2"} 
- </msg>
-<msg timestamp="20201109 10:32:27.526" level="INFO">PUT Response : url=https://reqres.in/api/users/2 
- status=200, reason=OK 
- body={"updatedAt":"2020-11-09T05:02:27.425Z"} 
- </msg>
-<msg timestamp="20201109 10:32:27.526" level="INFO">/Users/udecgi/PycharmProjects/Practice-Python/venv/lib/python2.7/site-packages/urllib3/connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20201109 10:32:27.526" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20201109 10:32:27.527" starttime="20201109 10:32:26.866"></status>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<doc>Converts the given item to a Unicode string.</doc>
-<arguments>
-<arg>${response.status_code}</arg>
-</arguments>
-<assign>
-<var>${statuscode}</var>
-</assign>
-<msg timestamp="20201109 10:32:27.528" level="INFO">${statuscode} = 200</msg>
-<status status="PASS" endtime="20201109 10:32:27.528" starttime="20201109 10:32:27.527"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>${statuscode}</arg>
-<arg>200</arg>
-</arguments>
-<status status="PASS" endtime="20201109 10:32:27.529" starttime="20201109 10:32:27.529"></status>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<doc>Converts the given item to a Unicode string.</doc>
-<arguments>
-<arg>${response.headers}</arg>
-</arguments>
-<assign>
-<var>${response.header}</var>
-</assign>
-<msg timestamp="20201109 10:32:27.530" level="INFO">${response.header} = {'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Content-Length': '40', 'Via': '1.1 vegur', 'X-Powered-By': 'Express', 'Set-Cookie': '__cfduid=...</msg>
-<status status="PASS" endtime="20201109 10:32:27.531" starttime="20201109 10:32:27.530"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${response.header}</arg>
-<arg>keep-alive</arg>
-</arguments>
-<status status="PASS" endtime="20201109 10:32:27.531" starttime="20201109 10:32:27.531"></status>
+<status status="PASS" endtime="20201109 12:03:52.979" starttime="20201109 12:03:52.976"></status>
 </kw>
 <tags>
 <tag>Modify the Student details for ID=1</tag>
 </tags>
-<status status="PASS" endtime="20201109 10:32:27.532" critical="yes" starttime="20201109 10:32:26.863"></status>
+<status status="PASS" endtime="20201109 12:03:52.980" critical="yes" starttime="20201109 12:03:52.975"></status>
 </test>
 <doc>Suite description</doc>
-<status status="PASS" endtime="20201109 10:32:27.533" starttime="20201109 10:32:26.756"></status>
+<status status="PASS" endtime="20201109 12:03:52.980" starttime="20201109 12:03:52.460"></status>
 </suite>
 <statistics>
 <total>
