@@ -10,7 +10,7 @@ Test Template    creating a put session
 
 *** Test Cases ***
 Modifying the Student Details
-    [Tags]    Modify the Student details for ID=1
+    [Tags]    RegressionTest
 
     creating a put session
     #create session          addstudentdata          ${base_url}

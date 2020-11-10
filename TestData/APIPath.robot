@@ -15,13 +15,15 @@ ${end_point_xml}            /sqlrest/CUSTOMER/15
 ${base_url_testingtool}     http://thetestingworldapi.com
 ${end_point_put}            /api/technicalskills/1
 
+${base_url_auth}            https://certtransaction.elementexpress.com/
 
+##################################################
 
 #Fat Environment
 ${fat_base_url}             https://reqres.in
 ${fat_end_point}            /api/users
 
-
+##################################################
 
 #Prod Environment
 ${prod_base_url}            https://reqres.in
